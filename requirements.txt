@@ -6,7 +6,7 @@ Pillow
 
 # ONNX Runtime (The engine that runs your model)
 # use onnxruntime-gpu if your offline laptops have NVIDIA GPUs, otherwise cpu
-onnxruntime
+onnxruntime==1.15.1
 
 # OpenMMLab Ecosystem
 # We pin torch to ensure compatibility with the MMCV wheels we will download

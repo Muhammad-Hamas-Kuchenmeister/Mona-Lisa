@@ -1,0 +1,17 @@
+# Core App Dependencies
+numpy
+opencv-python
+PyQt5
+Pillow
+
+# ONNX Runtime (The engine that runs your model)
+# use onnxruntime-gpu if your offline laptops have NVIDIA GPUs, otherwise cpu
+onnxruntime
+
+# OpenMMLab Ecosystem
+# We pin torch to ensure compatibility with the MMCV wheels we will download
+torch==2.1.0
+torchvision==0.16.0
+mmengine
+mmdet>=3.0.0
+mmdeploy-runtime

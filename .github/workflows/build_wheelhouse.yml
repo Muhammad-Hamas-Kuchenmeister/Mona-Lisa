@@ -1,0 +1,45 @@
+name: Build Offline Wheelhouse
+
+on:
+  workflow_dispatch: # This allows you to click a button to run it manually
+
+jobs:
+  download-wheels:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Upgrade pip and install wheel
+      run: |
+        python -m pip install --upgrade pip
+        pip install wheel
+
+    - name: Create Wheelhouse Directory
+      run: mkdir wheelhouse
+
+    - name: Download Standard Wheels
+      # Downloads everything in requirements.txt EXCEPT mmcv (which needs a special URL)
+      run: |
+        pip download -r requirements.txt -d ./wheelhouse 
+
+    - name: Download OpenMMLab (MMCV) Wheels
+      # This is the tricky part. We look for the specific CPU version for PyTorch 2.1
+      # If your company laptops have GPUs, change "cpu" to "cu118" (for CUDA 11.8) in the URL below.
+      run: |
+        pip download mmcv==2.1.0 -d ./wheelhouse -f https://download.openmmlab.com/mmcv/dist/cpu/torch2.1/index.html
+
+    - name: List Files (Verification)
+      run: dir wheelhouse
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: offline-windows-wheels
+        path: wheelhouse/

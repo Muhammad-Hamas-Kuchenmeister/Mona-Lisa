@@ -31,7 +31,7 @@ pip
 protobuf
 Pygments
 pyparsing
-PySimpleGUI
+PySimpleGUI==4.60.5
 python-dateutil
 requests
 rich
@@ -46,3 +46,4 @@ urllib3
 Werkzeug
 wheel
 wrapt
+

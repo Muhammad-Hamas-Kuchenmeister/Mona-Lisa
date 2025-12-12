@@ -3,6 +3,7 @@ numpy
 opencv-python
 PyQt5
 Pillow
+pyinstaller
 
 # ONNX Runtime (The engine that runs your model)
 # use onnxruntime-gpu if your offline laptops have NVIDIA GPUs, otherwise cpu

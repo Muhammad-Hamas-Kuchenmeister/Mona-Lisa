@@ -10,6 +10,7 @@ gast
 google-pasta
 grpcio
 h5py
+pyinstaller
 idna
 keras
 kiwisolver
@@ -46,4 +47,5 @@ urllib3
 Werkzeug
 wheel
 wrapt
+
 

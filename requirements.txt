@@ -1,5 +1,5 @@
 # Core App Dependencies
-numpy
+numpy<2
 opencv-python
 PyQt5
 Pillow

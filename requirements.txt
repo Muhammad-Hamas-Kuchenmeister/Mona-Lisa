@@ -8,6 +8,7 @@ pyinstaller
 # ONNX Runtime (The engine that runs your model)
 # use onnxruntime-gpu if your offline laptops have NVIDIA GPUs, otherwise cpu
 onnxruntime==1.15.1
+onnx
 
 # OpenMMLab Ecosystem
 # We pin torch to ensure compatibility with the MMCV wheels we will download

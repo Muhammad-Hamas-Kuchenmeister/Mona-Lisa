@@ -3,6 +3,7 @@ numpy<2
 opencv-python
 PyQt5
 Pillow
+pyqtgraph
 pyinstaller
 
 # ONNX Runtime (The engine that runs your model)
